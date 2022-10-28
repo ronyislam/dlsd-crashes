@@ -7,10 +7,7 @@
 # additional example workflows available for the R community.
 
 name: CrashesOnDLSD
-
-on:
-  schedule:
-    - cron: '30 19 * * *'  
+on: workflow_dispatch
 
 jobs:
   chicagocrashes-post:
