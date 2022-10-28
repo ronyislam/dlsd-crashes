@@ -1,20 +1,21 @@
-install.packages("rgeos")
-install.packages("rgdal")
-install.packages("devtools")
-library(devtools)
+install.packages("pacman")
+library(pacman)
+p_load(rgeos
+       , rgdal
+       , devtools
+       , viridis
+       , rgeos
+       , colorspace
+       , RSocrata
+       , tidyverse
+       , ggplot2
+       , lubridate
+       , rtweet
+       , leaflet
+       , leaflegend
+       , webshot2)
 install_github("r-spatial/sf", configure.args = "--with-proj-lib=/usr/local/lib/")
-library(viridis)
-library(rgeos)
-library(colorspace)
-library(RSocrata)
-library(tidyverse)
-library(ggplot2)
-library(lubridate)
-library(rtweet)
-library(sf)
-library(leaflet)
-library(leaflegend)
-library(webshot2)
+p_load(sf)
 
 startDate<-ymd(today(tz = "America/Chicago")-1)
 endDate<-ymd(today(tz = "America/Chicago")-0)
