@@ -136,10 +136,6 @@ ggplot(data=dlsdCrashStatsDOY, aes(x=day_month, y=crashes)) +
 
 dlsdCrashStatsDOY[dlsdCrashStatsDOY$crashes == max(dlsdCrashStatsDOY$crashes),]
 
-ggplot(data=dlsdCrashStats, aes(x=year_month, y=crashes)) +
-  geom_line()+
-  geom_point()
-
 
 chicagoCrash <- chicagoCrashCrashes %>%
   left_join(chicagoCrashPeople)
