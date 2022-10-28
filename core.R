@@ -1,5 +1,6 @@
 install.packages("rgeos")
 install.packages("rgdal")
+install.packages("devtools")
 library(devtools)
 install_github("r-spatial/sf", configure.args = "--with-proj-lib=/usr/local/lib/")
 library(viridis)
