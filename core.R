@@ -220,9 +220,9 @@ orderedInjuries <- c('No Injury', 'Injury', 'Severe Injury', 'Fatal')
 factorPal <- colorFactor('BrBG', domain = orderedInjuries, ordered = TRUE)
 
 
-crashCoordsMap <- leaflet(chicagoCrashCrashes, options = leafletOptions(zoomControl = TRUE,
-                                                                        zoomSnap = 0.25,
-                                                                        zoomDelta = 1)) %>%
+crashCoordsMap <- leaflet(chicagoCrashCrashes, options = leafletOptions(zoomControl = FALSE,
+                                                                        zoomSnap = .2,
+                                                                        zoomDelta = .5)) %>%
   addProviderTiles(LEAFLET_TILES) %>%
   addPolylines(data = streetLinesDLSD, color = "white", weight = 3, smoothFactor = 4) %>%
   addSymbolsSize(values = ~getSize(chicagoCrashCrashes),
@@ -238,8 +238,8 @@ crashCoordsMap
 
 htmlwidgets::saveWidget(widget = crashCoordsMap, file = "maps/temp/crashCoordsMap/map.html", selfcontained = FALSE)
 webshot2::webshot(url = "maps/temp/crashCoordsMap/map.html", file = paste0("maps/","crashCoordsMap", "-", startDate,".png"), 
-                  delay = 2,
-                  zoom = 3)
+                  delay = 1,
+                  zoom = 2)
 
 firstTweetImg <- paste0(getwd(),"/maps/","crashCoordsMap", "-", startDate,".png")
 
