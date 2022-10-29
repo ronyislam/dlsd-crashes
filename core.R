@@ -272,6 +272,7 @@ if(numberOfCrashes==1){
 }
 numberOfCrashesText 
 
+auth_as(auth)
 
 post_tweet(numberOfCrashesText, media = firstTweetImg,
            media_alt_text = "Map of all reported traffic crash on DuSable Lake Shore Drive on given date.")
