@@ -30,6 +30,10 @@ auth <- rtweet_bot(
   access_secret = Sys.getenv("TWITTER_ACCESS_TOKEN_SECRET")
 )
 
+auth_as(auth)
+
+search_users("chicagocrashes")
+
 ##Check if Data is ready
 sleep <- function(x){
   Sys.sleep(x)
