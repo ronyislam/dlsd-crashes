@@ -22,6 +22,12 @@ endDate<-ymd(today(tz = "America/Chicago")-0)
 dateQueryString <- paste0("crash_date between '",startDate, "' and '", endDate,"'")
 streetFilter<- "and street_name like '%LAKE SHORE DR%'"
 
+
+Sys.setenv(TWITTER_API_KEY = '5XU04v5xixVAQn9eOzFnYQ58l',
+           TWITTER_API_KEY_SECRET = 'yGCHY0jaqynG2qdwEKOkKXEWqErizFmZQ0HObEnWiNqIyye7vX',
+           TWITTER_ACCESS_TOKEN = '1585282262882557953-wZLFtlXwxlV4oyTO83SUz6ILDwZebx',
+           TWITTER_ACCESS_TOKEN_SECRET = '0KlxHg9FwXUgLZqDudhz8oKuu4pWDqUjrSPIIoyJabaBf')
+
 ##Authenticate Twitter
 auth <- rtweet_bot(
   api_key       = Sys.getenv("TWITTER_API_KEY"),
@@ -32,7 +38,6 @@ auth <- rtweet_bot(
 
 auth_as(auth)
 
-search_users("chicagocrashes")
 
 ##Check if Data is ready
 sleep <- function(x){
