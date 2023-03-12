@@ -266,7 +266,7 @@ if(numberOfCrashes==1){
   numberOfCrashesText <- paste0("Was there a traffic crash on DLSD on ",startDate,"?\n\nYes.\n\nThere was one crash.",peopleInjuredText)
 }else if(numberOfCrashes>1){
   if(numberOfCrashes>avgCrashesPerDay){
-    higherThanAverage<-paste0(" This is ", round((numberOfCrashes/avgCrashesPerDay)*100), "% higher than average.")
+    higherThanAverage<-paste0(" This is ", round(((avgCrashesPerDay-numberOfCrashes)/avgCrashesPerDay)*100), "% higher than average.")
     numberOfCrashesText <- paste0("Was there a traffic crash on DLSD on ",startDate,"?\n\nYes.\n\nThere were ", numberOfCrashes," crashes.",
                                   higherThanAverage,
                                   peopleInjuredText)
